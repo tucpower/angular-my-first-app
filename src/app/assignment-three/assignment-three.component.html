@@ -1,3 +1,9 @@
-<p>
-  assignment-three works!
-</p>
+<button 
+    class="btn btn-primary"
+    (click)="toggleParagraph()">Display Details</button>
+
+<p *ngIf="showParagraph">Secret password = tuna</p>
+
+<div *ngFor="let click of clicks; let i = index"
+    [ngStyle]="{backgroundColor : i >= 4 ? 'blue' : 'transparent'}" 
+    [ngClass]="{fifth: i >= 4}">{{click}}</div>

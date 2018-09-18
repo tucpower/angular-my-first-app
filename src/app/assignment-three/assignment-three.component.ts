@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AssignmentThreeComponent implements OnInit {
 
+  showParagraph = false;
+  clicks = [];
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  toggleParagraph() {
+    //this.showParagraph = this.showParagraph === true ? false : true;
+    this.showParagraph = !this.showParagraph;
+    //this.clicks.push(this.clicks.length + 1);
+    this.clicks.push(new Date());
   }
 
 }

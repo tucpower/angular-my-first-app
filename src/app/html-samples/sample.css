@@ -1,0 +1,11 @@
+h1 {
+    color: #ffffff;
+    background: #0000ff;
+    border: 5px solid aquamarine;
+}
+
+body {
+    background: url(https://previews.123rf.com/images/mironovak/mironovak1312/mironovak131200131/24727840-white-wooden-background-or-wood-grain-texture.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}

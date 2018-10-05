@@ -17,13 +17,19 @@
     
 // }
 
-function isEven(x) {
-    if(x % 2 === 0)
-        return "yes!"
-    else
-        return "no!"
-}
+// function isEven(x) {
+//     if(x % 2 === 0)
+//         return "yes!"
+//     else
+//         return "no!"
+// }
 
-var number = Number(prompt("Enter number!"));
-alert(isEven(number));
+// var number = Number(prompt("Enter number!"));
+// alert(isEven(number));
 
+var nextAction = "";
+var todos = ["111", "222", "333"];
+todos.forEach(function (todo, i) {
+    console.log(todo);
+    console.log(i);
+})

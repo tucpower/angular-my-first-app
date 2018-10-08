@@ -27,9 +27,33 @@
 // var number = Number(prompt("Enter number!"));
 // alert(isEven(number));
 
-var nextAction = "";
-var todos = ["111", "222", "333"];
-todos.forEach(function (todo, i) {
-    console.log(todo);
-    console.log(i);
-})
+// var nextAction = "";
+// var todos = ["111", "222", "333"];
+// todos.forEach(function (todo, i) {
+//     console.log(todo);
+//     console.log(i);
+// })
+
+var movie1 = {
+    title : "In Bruges",
+    rating : 5,
+    hasWatched : true
+}
+var movie2 = {
+    title : "Frozen",
+    rating : 4.5,
+    hasWatched : false
+}
+
+var movies = [movie1, movie2];
+movies.forEach(movie => {
+    if(movie.hasWatched)
+        console.log("You have watched \"" + movie.title + "\" - " + movie.rating + " stars");
+    else
+        console.log("You have not watched \"" + movie.title + "\" - " + movie.rating + " stars");
+});
+
+///////////////////////////////////// 153.
+
+var tag = document.getElementById('highlight');
+tag.style.color="yellow";

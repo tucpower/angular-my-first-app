@@ -1,41 +1,46 @@
-var numberOfSquares = 6;
-var colors = generateRandomColors(numberOfSquares);
+var numberOfSquares;
+var colors;
+var pickedColor;
 
-var pickedColor = pickColor();
 var colorDisplay = document.getElementById("colorDisplay");
-colorDisplay.textContent = pickedColor;
-
 var h1 = document.getElementsByTagName("h1")[0];
-
 var easyButton = document.querySelector("#easy");
-easyButton.addEventListener("click", function() {
-    easyButton.classList.add("selected");
-    hardButton.classList.remove("selected");
-
-    numberOfSquares = 3;
-    resetGame(numberOfSquares);
-});
-
 var hardButton = document.querySelector("#hard");
-hardButton.addEventListener("click", function() {
-    hardButton.classList.add("selected");
-    easyButton.classList.remove("selected");
-
-    numberOfSquares = 6;
-    resetGame(6);
-});
-
 var resetButton = document.querySelector("#reset");
-resetButton.addEventListener("click", function() {
-    resetGame(numberOfSquares);
-})
-
 var messageDisplay = document.getElementById("message");
-
 var squares = document.querySelectorAll(".square");
-for (let i = 0; i < squares.length; i++) {
-    squares[i].style.backgroundColor = colors[i];
-    squares[i].addEventListener("click", squareClicked);
+
+init();
+
+function init() {
+    numberOfSquares = 6;
+
+    easyButton.addEventListener("click", function() {
+        easyButton.classList.add("selected");
+        hardButton.classList.remove("selected");
+    
+        numberOfSquares = 3;
+        resetGame();
+    });
+
+    hardButton.addEventListener("click", function() {
+        hardButton.classList.add("selected");
+        easyButton.classList.remove("selected");
+    
+        numberOfSquares = 6;
+        resetGame();
+    });
+
+    resetButton.addEventListener("click", function() {
+        resetGame();
+    })    
+
+    resetGame();
+
+    for (let i = 0; i < squares.length; i++) {
+        squares[i].style.backgroundColor = colors[i];
+        squares[i].addEventListener("click", squareClicked);
+    }
 }
 
 function squareClicked() {
@@ -81,8 +86,8 @@ function randomColor() {
     return "rgb(" + red + ", " + green + ", " + blue + ")";
 }
 
-function resetGame(num) {
-    colors = generateRandomColors(num);
+function resetGame() {
+    colors = generateRandomColors(numberOfSquares);
     pickedColor = pickColor();
     colorDisplay.textContent = pickedColor;
 
@@ -96,5 +101,7 @@ function resetGame(num) {
         }
     }
 
-    h1.style.background = "#232323";
+    h1.style.background = "steelblue";
+    messageDisplay.textContent = "";
+    resetButton.textContent = "New Colors";
 }
